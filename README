@@ -1,0 +1,33 @@
+Strategy: iterate over the given array from both ends, and keep checking and reseting the tallestWall. Compare the current wall with the tallestWall, if it is smaller, subtract the difference and add it to the total water. Otherwise, set the new tallestWall. Record total water between two tallestwall (right and left) and return the indexes once done.
+
+Big-O : O (n) or linear as we'll be iterating over the whole given array once. 
+
+
+Transformation: 
+input: [5,3,7,2,6,4,5,9,1,2]
+output: [2,7]
+
+
+function rainWater(array) {
+  //delcare variables called left and right where left = 0 and right = array.length - 1
+  //initialize variables leftWall and rightWall with 0
+  // start from the left side and check if current item in the array is smaller than the array[right]
+  // if yes, 
+    //compare the current item's value with leftWall
+      //if it is greater, assign this value to leftWall
+      //otherwise, 
+        //check if the difference of leftWall and current item's value is 0
+          // if no, add the difference of leftWall and current item's value into totalWater value
+          // otherwise check if totalWater is greater than the maxWater
+            //if yes, return the starting and ending indexes 
+            // reset the value of totalWater
+  // if no, 
+    //compare the current item's value with rightWall
+      //if it is greater, assign this value to rightWall
+      //otherwise,
+        //check if the difference of rightWall and current item's value is 0
+          // if no, add the difference of rightWall and current item's value into totalWater value
+          // otherwise check if totalWater is greater than the maxWater
+            //if yes, return the starting and ending indexes 
+            // reset the value of totalWater
+}
